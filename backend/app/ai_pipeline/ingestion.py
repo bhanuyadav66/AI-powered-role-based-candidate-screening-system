@@ -22,16 +22,22 @@ import uuid
 
 import chromadb
 import pymupdf
-from sentence_transformers import SentenceTransformer
 
 from app.config import settings
 
 _embedder = None
 
 
-def get_embedder() -> SentenceTransformer:
+def get_embedder():
     global _embedder
     if _embedder is None:
+        # Imported lazily, not at module load time: sentence-transformers pulls
+        # in torch, which is slow and memory-heavy to import. Deferring this
+        # until the first actual embedding call lets the web server bind its
+        # port immediately on startup instead of stalling during import and
+        # getting killed by the platform's port-scan timeout.
+        from sentence_transformers import SentenceTransformer
+
         _embedder = SentenceTransformer(settings.embedding_model)
     return _embedder
 
