@@ -1,0 +1,26 @@
+# Environment & Secret files
+.env
+.env.local
+*.env
+
+# Dependencies & Build output
+node_modules/
+.next/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Database
+backend/app.db
+
+# Knowledge Base PDFs (Do NOT commit raw PDFs in knowledge_base/)
+backend/knowledge_base/
+knowledge_base/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
