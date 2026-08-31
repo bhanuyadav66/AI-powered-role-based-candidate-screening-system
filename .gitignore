@@ -24,3 +24,7 @@ knowledge_base/
 Thumbs.db
 .vscode/
 .idea/
+
+node_modules/
+frontend/.next/
+
