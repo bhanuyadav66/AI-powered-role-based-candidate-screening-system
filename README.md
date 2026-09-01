@@ -124,5 +124,5 @@ Open http://localhost:3000. Make sure the backend is already running on port 800
   fresh clone/setup on another machine.
 
 ## Demo Video
+[click](https://drive.google.com/file/d/1YXwZa3-u6jtByZmIdq9sj6EbQqzK4Hy4/view?usp=sharing)
 
-[link]
